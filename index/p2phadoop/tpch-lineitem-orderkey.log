@@ -1,0 +1,3 @@
+# 一行sql， n行range
+select sum(linenumber), min(orderkey), min(partkey), min(suppkey), min(quantity), min(extendedprice), min(discount), min(tax), min(returnflag), min(linestatus), min(shipdate), min(commitdate), min(receiptdate), min(shipinstruct), min(shipmode), min(comment) from hive.tpch100.lineitem where orderkey is not null and orderkey between {} and {};
+for range (469817345, 469823302), minmax blknum is 10869, gre blknum is 72, finger blknum is 109, sieve blknum is 4, opt blknum is 3

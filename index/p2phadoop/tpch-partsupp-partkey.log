@@ -1,0 +1,11 @@
+select min(partkey), min(suppkey), min(availqty), min(supplycost), min(comment) from hive.tpch_origin.partsupp where partkey is not null and partkey between {} and {};
+select min(partkey), min(suppkey), min(availqty), min(supplycost), min(comment) from hive.tpch_minmax.partsupp where partkey is not null and partkey between {} and {};
+select min(partkey), min(suppkey), min(availqty), min(supplycost), min(comment) from hive.tpch_finger.partsupp where partkey is not null and partkey between {} and {};
+select min(partkey), min(suppkey), min(availqty), min(supplycost), min(comment) from hive.tpch_gre.partsupp where partkey is not null and partkey between {} and {};
+select min(partkey), min(suppkey), min(availqty), min(supplycost), min(comment) from hive.tpch_sieve.partsupp where partkey is not null and partkey between {} and {};
+-minmax avg is 1300.864, gre avg is 970.427, finger avg is 14.662, sieve avg is 4.148, opt avg is 1.11
+minmax:for range (3632086, 3632286); gre:for range (2284573, 2284773); finger:for range (2226368, 2226568); sieve:for range (2226368, 2226568)
+-minmax avg is 1281.317, gre avg is 950.287, finger avg is 16.106, sieve avg is 5.44, opt avg is 2.387
+minmax:for range (17145834, 17147833); gre:for range (2285658, 2287657); finger:for range (3153427, 3155426); sieve:for range (3153427, 3155426)
+-minmax avg is 1289.018, gre avg is 949.934, finger avg is 28.259, sieve avg is 17.732, opt avg is 14.641
+minmax:for range (3566142, 3586141); gre:for range (2277569, 2297568); finger:for range (17742928, 17762927); sieve:for range (17742928, 17762927)

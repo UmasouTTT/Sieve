@@ -1,0 +1,13 @@
+select round(avg(lon)) from hive.openstreet_minmax.open where lon is not null and lon between {} and {};
+select round(avg(lon)) from hive.openstreet_finger.open where lon is not null and lon between {} and {};
+select round(avg(lon)) from hive.openstreet_gre.open where lon is not null and lon between {} and {};
+select round(avg(lon)) from hive.openstreet_sieve.open where lon is not null and lon between {} and {};
+**************test on selectivity 1e-05 *********************
+minmax for range (-874062949, -870755101);gre for range (103781389, 104383253);finger for range (445890758, 450226291);sieve for range (31923236, 31933373)
+avg minmax is 77568.688, gre is 63355.844, finger is 34600.554, sieve is 22802.344, opt is 0.0
+**************test on selectivity 0.0001 *********************
+minmax for range (1127907945, 1127936151);gre for range (110471505, 110477743);finger for range (224162823, 224173413);sieve for range (1394124894, 1394420224)
+avg minmax is 77256.649, gre is 62632.832, finger is 35489.909, sieve is 25221.051, opt is 0.0
+**************test on selectivity 0.001 *********************
+minmax for range (-859945313, -859708874);gre for range (166340227, 166347812);finger for range (208394824, 208412725);sieve for range (204657479, 206136638)
+avg minmax is 77653.944, gre is 64598.079, finger is 40982.654, sieve is 31676.521, opt is 0.0
