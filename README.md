@@ -40,7 +40,7 @@ python3.8
     // for common
     sudo apt update
     sudo apt upgrade
-    pip install --upgrade pip
+    apt install --upgrade pip
 
     // for data processing
     pip install pyarrow==8.0.0
